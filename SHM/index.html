@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            padding: 70px;
+            background-color: #003049;
+        }
+
+        datalist {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: aliceblue;
+            writing-mode:sideways-lr;
+            width: 300px;
+        }
+
+        #matter-container{
+            width: 800px;
+            height: 200px;
+            overflow: hidden;
+            
+        }
+
+        .graphs{
+            display: flex;
+            flex-direction: rows;
+
+            width: 100%;
+
+            padding: 50px 50px 50px 50px;
+        }
+
+        #displacement{
+            width: 47.5%;
+            height: 60vh;
+        }
+
+        #velocity{
+            width: 47.5%;
+        }
+
+    </style>
+</head>
+<body>
+    <div style="text-align: center; font-size: 50px; color: #F77F00;     font-family: 'Tilt Warp', cursive ;">
+        Damped Simple Harmonic Motion
+    </div>
+
+    <div style="display: flex; justify-content: center;">
+        <div id="matter-container"></div>
+    </div>
+
+    <br><br>
+
+    <div style="display: flex; justify-content: center;" >
+        <div>
+            <h2 style="text-align: center; color: aliceblue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> Damping </h2>
+            <br>
+            <input style="width: 300px;" type="range" id="damp" name="points" min="0" max="0.005" step="0.00041666666666666" list="markers">
+            <datalist id="markers">
+                <option value="0" label="0">0</option>
+                <option value="0.1"></option>
+                <option value="0.2">0.2</option>
+                <option value="0.3"></option>
+                <option value="0.4">0.4</option>
+                <option value="0.5"></option>
+                <option value="0.6">0.6</option>
+                <option value="0.7"></option>
+                <option value="0.8">0.8</option>
+                <option value="0.9"></option>
+                <option value="1.0">1</option>
+            </datalist>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div style="display: flex; justify-content: center;">
+        <div class="graphs">
+            <div id="displacement"></div>
+            <span style="width: 5%;"></span>
+            <div id="velocity"></div>
+        </div>
+    </div>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="../node_modules/matter-js/build/matter.js"></script>
+    <script src="../node_modules/matter-js/build/matter-springs.js"></script>
+    <script src="app.js"></script>
+    <script src="graph.js"></script>
+    <script src="graphV.js"></script>
+</body>
+</html>
